@@ -54,7 +54,7 @@
                                 Services
                             </a>
 
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="{{{route('portfullio.index')}}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                                 Portfullio
                             </a>
