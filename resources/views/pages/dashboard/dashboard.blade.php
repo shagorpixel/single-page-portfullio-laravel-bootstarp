@@ -49,10 +49,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Main
                             </a>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="{{route('service.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                                 Services
                             </a>
+
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                                 Portfullio

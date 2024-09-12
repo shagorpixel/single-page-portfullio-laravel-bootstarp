@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\mainPageController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[PagesController::class,'index'])->name('home.page');
-Route::get('/admin/dashboard',[PagesController::class,'dashboard'])->name('dashboard');
-Route::get('/admin/dashboard/main',[mainPageController::class,'index'])->name('dashboard.main');
-Route::put('/admin/dashboard/{id}',[mainPageController::class,'update'])->name('main.update');
+Route::get('/admin',[PagesController::class,'dashboard'])->name('dashboard');
+Route::get('/admin/main',[mainPageController::class,'index'])->name('dashboard.main');
+Route::put('/admin/{id}',[mainPageController::class,'update'])->name('main.update');
+Route::resource('/admin/service', ServiceController::class);
 
 
 

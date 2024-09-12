@@ -7,50 +7,13 @@ use Illuminate\Http\Request;
 
 class mainPageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $mainSection = Main::first();
         return view('pages.dashboard.main',compact('mainSection'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Main $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Main $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request,Main $id)
     {
         $request->validate([
@@ -95,14 +58,8 @@ class mainPageController extends Controller
         ];
 
         $id->update($data);
+        $request->session()->flash('status', 'Section Updated Succesfully');
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Main $mainSection)
-    {
-        //
-    }
 }
