@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(mainSectionSeeder::class);
         $this->call(ServiceSeeder::class);
         $this->call(portfullioSeeder::class);
+        $this->call(aboutSeeder::class);
     }
 }

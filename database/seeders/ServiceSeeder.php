@@ -15,7 +15,7 @@ class ServiceSeeder extends Seeder
     {
         $service = [
 
-            ["name"=>"Graphics Design",
+            ["name"=>"Digital Marketing",
             "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
             "icon"=>"fa-regular fa-image",
             'created_at' => date("Y-m-d")],

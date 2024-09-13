@@ -40,7 +40,7 @@ class PortfullioController extends Controller
         $imageName = null;
         if($image = $request->file('image')){
             $imageName = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            $image->move('images',$imageName);
+            $image->move('upload/img/',$imageName);
         }
         $data = [
             'title'=>$request->title,
@@ -85,7 +85,7 @@ class PortfullioController extends Controller
         if($image = $request->file('image')){
             $imageName = time().'-'.uniqid().'.'.$image->getClientOriginalExtension();
             $image->move('images',$imageName);
-            $oldImage = 'images/'.$portfullio->image;
+            $oldImage = 'upload/img/'.$portfullio->image;
             if($portfullio->image != null){
                 if(file_exists($oldImage)){
                     unlink($oldImage);

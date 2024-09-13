@@ -10942,12 +10942,15 @@ p {
     margin-right: 0;
   }
 }
+
+.service-icon{
+    height: 120px; width:120px; margin:0 auto; display: flex; align-items: center; justify-content: center;
+}
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

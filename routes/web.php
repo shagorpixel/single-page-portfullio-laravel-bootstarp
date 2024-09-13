@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\mainPageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PortfullioController;
@@ -12,6 +13,7 @@ Route::get('/admin/main',[mainPageController::class,'index'])->name('dashboard.m
 Route::put('/admin/{id}',[mainPageController::class,'update'])->name('main.update');
 Route::resource('/admin/service', ServiceController::class);
 Route::resource('admin/portfullio', PortfullioController::class);
+Route::resource('admin/about', AboutController::class);
 
 
 Auth::routes();

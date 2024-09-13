@@ -58,7 +58,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>
                                 Portfullio
                             </a>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="{{route('about.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 About
                             </a>
