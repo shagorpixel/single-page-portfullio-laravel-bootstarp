@@ -22,7 +22,10 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top">
+                {{-- <img src="assets/img/navbar-logo.svg" alt="..." /> --}}
+                <h2>Multimedia It</h2>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -169,20 +172,30 @@
                 <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <div class="row">
+                @foreach ($teamMembers as $teamMember)
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                        <h4>Parveen Anand</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
+                        <img class="mx-auto rounded-circle" src="{{$teamMember->image?asset('upload/img/'.$teamMember->image):asset('assets/img/team/1.jpg')}}" alt="..." />
+                        <h4>{{$teamMember->name}}</h4>
+                        <p class="text-muted">{{$teamMember->title}}</p>
+                        @if ($teamMember->twitter)
+                        <a class="btn btn-dark btn-social mx-2" target="blank" href="{{$teamMember->twitter}}"
+                        aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        @endif
+
+                        @if ($teamMember->facebook)
+                        <a class="btn btn-dark btn-social mx-2" target="blank" href="{{$teamMember->facebook}}"
                             aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
+
+                        @if ($teamMember->linkedin)
+                        <a class="btn btn-dark btn-social mx-2" target="blank" href="{{$teamMember->linkedin}}"
+                        aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
                     </div>
                 </div>
-                <div class="col-lg-4">
+                @endforeach
+                {{-- <div class="col-lg-4">
                     <div class="team-member">
                         <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
                         <h4>Diana Petersen</h4>
@@ -207,7 +220,7 @@
                         <a class="btn btn-dark btn-social mx-2" href="#!"
                             aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -222,8 +235,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                    <a href="#!">
+                        <img class="img-fluid img-brand d-block mx-auto"
+                            src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" />
+                    </a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3">
                     <a href="#!"><img class="img-fluid img-brand d-block mx-auto"

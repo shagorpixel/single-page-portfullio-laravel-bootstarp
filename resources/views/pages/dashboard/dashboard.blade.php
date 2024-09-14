@@ -62,6 +62,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                                 About
                             </a>
+                            <a class="nav-link" href="{{route('team.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-user-group"></i></div>
+                                Team
+                            </a>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                                 Contact
