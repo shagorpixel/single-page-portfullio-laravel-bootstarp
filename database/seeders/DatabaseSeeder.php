@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(portfullioSeeder::class);
         $this->call(aboutSeeder::class);
         $this->call(teamSeeder::class);
+        $this->call(userSeeder::class);
     }
 }

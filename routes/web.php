@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[PagesController::class,'index'])->name('home.page');
 route::post('/contact',[contactController::class,'store'])->name('contact.store');
 
-Route::get('/admin',[PagesController::class,'dashboard'])->name('dashboard');
-Route::get('/admin/main',[mainPageController::class,'index'])->name('dashboard.main');
-Route::put('/admin/{id}',[mainPageController::class,'update'])->name('main.update');
-Route::resource('/admin/service', ServiceController::class);
-Route::resource('admin/portfullio', PortfullioController::class);
-Route::resource('admin/team',TeamController::class);
-Route::resource('admin/about', AboutController::class);
+Route::get('/admin',[PagesController::class,'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/admin/main',[mainPageController::class,'index'])->name('dashboard.main')->middleware('auth');
+Route::put('/admin/{id}',[mainPageController::class,'update'])->name('main.update')->middleware('auth');
+Route::resource('/admin/service', ServiceController::class)->middleware('auth');
+Route::resource('admin/portfullio', PortfullioController::class)->middleware('auth');
+Route::resource('admin/team',TeamController::class)->middleware('auth');
+Route::resource('admin/about', AboutController::class)->middleware('auth');
 
-
-
+Route::get('/test',function(){
+    return view('welcome');
+});
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

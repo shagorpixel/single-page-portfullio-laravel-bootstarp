@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -44,8 +45,8 @@
     </nav>
     <!-- Masthead-->
     <header
-        style=" background-image:url('{{ $main->bg_image ? asset('upload/img/' . $main->bg_image) : asset('assets/img/header-bg.jpg') }}');"
-        class="masthead">
+        data-background-image="{{ $main->bg_image ? asset('upload/img/' . $main->bg_image) : asset('assets/img/header-bg.jpg') }}"
+        class="masthead lozad">
         <div class="container">
             <div class="masthead-subheading">{{ $main->title }}</div>
             <div class="masthead-heading text-uppercase">{{ $main->sub_title }}</div>
@@ -89,8 +90,8 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid"
-                                    src="{{ $portfullio->image ? asset('images/' . $portfullio->image) : asset('assets/img/portfolio/1.jpg') }}"
+                                <img class="img-fluid lozad"
+                                    data-src="{{ $portfullio->image ? asset('images/' . $portfullio->image) : asset('assets/img/portfolio/1.jpg') }}"
                                     alt="..." />
                             </a>
                             <div class="portfolio-caption">
@@ -121,8 +122,8 @@
 
                     @if ($aboutarrayindex % 2 == 0)
                         <li>
-                            <div class="timeline-image"><img class="rounded-circle img-fluid"
-                                    src="assets/img/about/1.jpg" alt="..." /></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid lozad"
+                                    data-src="assets/img/about/1.jpg" alt="..." /></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>{{ $about->duration }}</h4>
@@ -135,8 +136,8 @@
                         </li>
                     @else
                         <li class="timeline-inverted">
-                            <div class="timeline-image"><img class="rounded-circle img-fluid"
-                                    src="assets/img/about/1.jpg" alt="..." /></div>
+                            <div class="timeline-image"><img class="rounded-circle img-fluid lozad"
+                                    data-src="assets/img/about/1.jpg" alt="..." /></div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>{{ $about->duration }}</h4>
@@ -175,7 +176,7 @@
                 @foreach ($teamMembers as $teamMember)
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{{$teamMember->image?asset('upload/img/'.$teamMember->image):asset('assets/img/team/1.jpg')}}" alt="..." />
+                        <img class="mx-auto rounded-circle lozad" data-src="{{$teamMember->image?asset('upload/img/'.$teamMember->image):asset('assets/img/team/1.jpg')}}" alt="..." />
                         <h4>{{$teamMember->name}}</h4>
                         <p class="text-muted">{{$teamMember->title}}</p>
                         @if ($teamMember->twitter)
@@ -195,32 +196,7 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                        <h4>Diana Petersen</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"
-                            aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div> --}}
+
             </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -236,27 +212,27 @@
             <div class="row align-items-center">
                 <div class="col-md-3 col-sm-6 my-3">
                     <a href="#!">
-                        <img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" />
+                        <img class="img-fluid img-brand d-block mx-auto lozad"
+                            data-src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" />
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto lozad"
+                            data-src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
-                            src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto lozad"
+                            data-src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg"
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto lozad" data-src="assets/img/logos/ibm.svg"
                             alt="..." aria-label="IBM Logo" /></a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Contact-->
-    <section class="page-section" id="contact">
+    <section class="page-section lozad" id="contact" data-background-image="{{asset('assets/img/map-image.png')}}">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Contact Us</h2>
@@ -350,8 +326,8 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">{{ $portfullio->title }}</h2>
                                     <p class="item-intro text-muted">{{ $portfullio->sub_title }}</p>
-                                    <img class="img-fluid d-block mx-auto"
-                                        src="{{ $portfullio->image ? asset('images/' . $portfullio->image) : asset('assets/img/portfolio/1.jpg') }}"
+                                    <img class="img-fluid d-block mx-auto lozad"
+                                        data-src="{{ $portfullio->image ? asset('images/' . $portfullio->image) : asset('assets/img/portfolio/1.jpg') }}"
                                         alt="..." />
                                     <p>{{ $portfullio->description }}</p>
                                     <ul class="list-inline">
@@ -381,6 +357,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
+
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
