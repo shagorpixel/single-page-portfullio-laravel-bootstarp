@@ -69,6 +69,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                                 Services
                             </a>
+                            <a class="nav-link" href="{{route('servicecategory.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-tag"></i></div>
+                                Service Category
+                            </a>
 
                             <a class="nav-link" href="{{{route('portfullio.index')}}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-images"></i></div>

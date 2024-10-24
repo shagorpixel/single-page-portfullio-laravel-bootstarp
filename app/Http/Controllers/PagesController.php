@@ -19,6 +19,9 @@ class PagesController extends Controller
        $teamMembers = Team::all();
         return view('pages.index',compact('main','services','portfullios','abouts','teamMembers'));
     }
+    public function service(){
+        return view('pages.service');
+    }
     public function dashboard(){
         return view('pages.dashboard.index');
     }

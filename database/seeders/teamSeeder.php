@@ -14,12 +14,24 @@ class teamSeeder extends Seeder
     public function run(): void
     {
         $data =[
-            'name'=>'Md Shagor Hossain',
+            ['name'=>'Md Shagor Hossain',
             'title'=>'Web Developer',
             'image'=>null,
             'facebook'=>'https://www.facebook.com/shagor.hossain.528/',
             'twitter'=>'https://x.com/shagorpixel',
-            'linkedin'=>'https://www.linkedin.com/in/md-shagor-hossain-1a114027b/',
+            'linkedin'=>'https://www.linkedin.com/in/md-shagor-hossain-1a114027b/'],
+            ['name'=>'Niloy Even',
+            'title'=>'Graphics Designer',
+            'image'=>null,
+            'facebook'=>'https://www.facebook.com/shagor.hossain.528/',
+            'twitter'=>'https://x.com/shagorpixel',
+            'linkedin'=>'https://www.linkedin.com/in/md-shagor-hossain-1a114027b/'],
+            ['name'=>'Shoaib Mahmud',
+            'title'=>'Digital Marketor',
+            'image'=>null,
+            'facebook'=>'https://www.facebook.com/shagor.hossain.528/',
+            'twitter'=>'https://x.com/shagorpixel',
+            'linkedin'=>'https://www.linkedin.com/in/md-shagor-hossain-1a114027b/']
         ];
         Team::insert($data);
     }
