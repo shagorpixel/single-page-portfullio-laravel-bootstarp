@@ -34,11 +34,11 @@
                             </div>
                             <div class="form-group mb-2">
                                 <label for="background"><b>Background</b></label><br>
-                                <input id="background" type="file" name="bg_image">
+                                <input class=" form-control" id="background" type="file" name="bg_image">
                             </div>
                             <div class="form-group">
                                 <label for="resume"><b>Resume</b></label><br>
-                                <input id="resume" type="file" name="resume">
+                                <input class=" form-control" id="resume" type="file" name="resume">
                             </div>
                         </div>
 

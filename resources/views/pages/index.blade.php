@@ -58,17 +58,21 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Services</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">Our Letest 3 Service</h3>
             </div>
             <div class="row text-center">
                 @foreach ($services as $service)
-                    <div class="col-md-4">
-                        <div class="service-icon rounded-circle bg-primary">
-                            <span class="text-light display-2"><i class="{{ $service->icon }}"></i></span>
-                        </div>
-                        <h4 class="my-3">{{ $service->name }}</h4>
-                        <p class="text-muted">{{ $service->description }}</p>
+                <div class="col-md-4 text-start">
+                    <div class="card product-card">
+                      <img src="{{asset('upload/img/'.$service->image)}}" class="card-img-top" alt="Product Image">
+                      <div class="card-body">
+                        <h5 class="card-title">{{$service->title}}</h5>
+                        <h5 class="card-title text-primary">{{$service->category->name}}</h5>
+                        <p class="card-text">${{$service->price}}</p>
+                        <a href="#" class="btn btn-primary">View Detils</a>
+                      </div>
                     </div>
+                  </div>
                 @endforeach
             </div>
         </div>

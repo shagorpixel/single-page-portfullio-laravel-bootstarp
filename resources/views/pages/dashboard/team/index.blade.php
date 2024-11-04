@@ -33,27 +33,30 @@
                             </thead>
                             <tbody>
                                 @foreach ($members as $member)
-                                <tr>
+                                <tr class="align-middle">
                                     <td>{{$member->id}}</td>
                                     <td>{{$member->name}}</td>
                                     <td>{{$member->title}}</td>
                                     <td style="width: 10%">
-                                        <img class="w-100" src="{{$member->image?asset('upload/img/'.$member->image):asset('assets/img/portfolio/1.jpg') }}" alt="">
+                                        <img class="w-100" src="{{$member->image?
+                                        asset('upload/img/'.$member->image):asset('assets/img/portfolio/1.jpg') }}" alt="">
                                      </td>
-                                    <td class="d-flex">
-                                        <a class="mx-1" href="{{route('team.edit',$member->id)}}">
-                                            <span class="btn btn-sm btn-primary"><i class="fa-regular fa-pen-to-square"></i></i></span>
-                                        </a>
-                                        <a class="mx-1" href="{{route('team.show',$member->id)}}">
-                                            <span class="btn btn-sm btn-secondary"><i class="fa-regular fa-eye"></i></span>
-                                        </a>
-                                        <form class="mx-1" action="{{route('team.destroy',$member->id)}}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-sm btn-danger" type="submit">
-                                                <span><i class="fa-solid fa-trash"></i></span>
-                                            </button>
-                                        </form>
+                                    <td >
+                                        <div class="d-flex">
+                                            <a class="mx-1" href="{{route('team.edit',$member->id)}}">
+                                                <span class="btn btn-sm btn-primary"><i class="fa-regular fa-pen-to-square"></i></i></span>
+                                            </a>
+                                            <a class="mx-1" href="{{route('team.show',$member->id)}}">
+                                                <span class="btn btn-sm btn-secondary"><i class="fa-regular fa-eye"></i></span>
+                                            </a>
+                                            <form class="mx-1" action="{{route('team.destroy',$member->id)}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-sm btn-danger" type="submit">
+                                                    <span><i class="fa-solid fa-trash"></i></span>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

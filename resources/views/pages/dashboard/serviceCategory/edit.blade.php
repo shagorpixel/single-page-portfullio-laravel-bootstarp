@@ -18,7 +18,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Edit Service Categoory</h3>
                     </div>
-                    <form class="row" method="POST" action="{{ route('servicecategory.update',$serviceCategory->id) }}" method="POST">
+                    <form class="row" method="POST" action="{{ route('servicecategory.update',$serviceCategory->id) }}" enctype="multipart/form-data" method="POST">
                         @method('put')
                         @csrf
                         <div class="card-body col-md-6">

@@ -15,18 +15,12 @@ class ServiceSeeder extends Seeder
     {
         $service = [
 
-            ["name"=>"Digital Marketing",
-            "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "icon"=>"fa-regular fa-image",
-            'created_at' => date("Y-m-d")],
-            ["name"=>"Web Development",
-            "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "icon"=>"fa-solid fa-earth-americas",
-            'created_at' => date("Y-m-d")],
-            ["name"=>"Graphics Design",
-            "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "icon"=>"fa-solid fa-icons",
-            'created_at' => date("Y-m-d")]
+           'title'=>"Web Development",
+           'slug'=>"Web_Development",
+            'category_id'=>1,
+            'image'=>null,
+            'price'=>25,
+            'description'=>'Web development is the process of building, maintaining, and programming websites and web applications. It involves writing code and using various programming languages to ensure that a website functions properly and provides a good user experience',
         ];
 
         Service::insert($service);
